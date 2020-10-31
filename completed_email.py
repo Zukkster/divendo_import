@@ -1,3 +1,5 @@
+from logging import Logger
+
 from parse_config import fn_parse_config
 from configparser import ConfigParser
 import logging
@@ -13,7 +15,7 @@ def fn_write_postgres_csv(sql_str,out_file):
         log_file_path = path.join(path.dirname(path.abspath(__file__)), 'logging.conf')
         print(log_file_path)
         logging.config.fileConfig(log_file_path)
-        logger=logging.getLogger(__name__)
+        logger: Logger=logging.getLogger(__name__)
         
         login_params = fn_parse_config("etl_process.ini", "psycopg_login")       
         # connect to the PostgreSQL database

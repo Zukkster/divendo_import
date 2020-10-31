@@ -24,8 +24,8 @@ def main():
     logger.info("START MAIN:Begin Process")
 
     #get the files
-    fn_sftp_get_files()
-    logger.info("PROCESS NEW FILES:Started")    
+    #fn_sftp_get_files()
+    #logger.info("PROCESS NEW FILES:Started")
     #load the files into the staging tables
     loaded_files = fn_process_files_new()
     print("LoadedFiles")
